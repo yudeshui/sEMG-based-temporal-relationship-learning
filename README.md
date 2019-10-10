@@ -1,5 +1,5 @@
 
-# code for "A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition" and "sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning"
+# Code for "A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition" and "sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning"
 
 This repo contains the code for the experiments in the paper: 
 1. Yu Hu, Yongkang Wong, Wentao Wei, Yu Du, Mohan Kankanhalli, Weidong Geng. " [A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0206049)"
@@ -56,16 +56,24 @@ Licensed under an GPL v3.0 license.
 
 ## Bibtex
 ```
-@article{WEI20190301,
-title = "A multi-stream convolutional neural network for sEMG-based gesture recognition in muscle-computer interface",
-journal = "Pattern Recognition Letters",
-volume = "119",
-pages = "131 - 138",
-year = "2019",
-note = "Deep Learning for Pattern Recognition",
-issn = "0167-8655",
-doi = "https://doi.org/10.1016/j.patrec.2017.12.005",
-url = "http://www.sciencedirect.com/science/article/pii/S0167865517304439",
-author = "Wentao Wei and Yongkang Wong and Yu Du and Yu Hu and Mohan Kankanhalli and Weidong Geng"
+@article{hu2018novel,
+  title={A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition},
+  author={Hu, Yu and Wong, Yongkang and Wei, Wentao and Du, Yu and Kankanhalli, Mohan and Geng, Weidong},
+  journal={PloS one},
+  volume={13},
+  number={10},
+  pages={e0206049},
+  year={2018},
+  publisher={Public Library of Science}
 }
+@article{hu2019semg,
+  title={sEMG-Based Gesture Recognition With Embedded Virtual Hand Poses and Adversarial Learning},
+  author={Hu, Yu and Wong, Yongkang and Dai, Qingfeng and Kankanhalli, Mohan and Geng, Weidong and Li, Xiangdong},
+  journal={IEEE Access},
+  volume={7},
+  pages={104108--104120},
+  year={2019},
+  publisher={IEEE}
+}
+
 ```
