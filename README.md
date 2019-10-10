@@ -1,7 +1,7 @@
 
 # Code for "A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition" and "sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning"
 
-This repo contains the code for the experiments in the paper: 
+This repo contains the code for the experiments in the papers: 
 1. Yu Hu, Yongkang Wong, Wentao Wei, Yu Du, Mohan Kankanhalli, Weidong Geng. " [A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0206049)"
 2. Yu Hu, Yongkang Wong, Qingfeng Dai, Mohan Kankanhalli, Weidong Geng. " [sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning]()"
 ## Requirements
@@ -11,14 +11,13 @@ This repo contains the code for the experiments in the paper:
 - [Nvidia Docker](https://github.com/NVIDIA/nvidia-docker)
 
 ## Usage
-- **Pull or build docker image**
+- **Pull docker image for the first paper**
     ``` 
     docker pull zjucapg/semg:latest
     ```
-    or
-    ``` 
-    docker build -t zjucapg/semg:latest -d docker/Dockerfile .
+- **Pull docker image for the second paper**
     ```
+    docker pull zjucapg/semg:tf
 - **Dataset**
     
     Eleven databases including Ninapro DB1-DB7, CapgMyo DBa-DBc and CSL-HDEMG can be used for training and test.
