@@ -44,9 +44,9 @@ This repo contains the code for the experiments in the paper:
     or ./exp_dbc     # CapgMyo DB-c
     or ./exp_csl     # CSL HDEMG
     # Test
-    python scripts/test_ninapro_multistream.py      # Ninapro DB1
-    python scripts/test_dbc_multistream.py          # CapgMyo DB-c
-    python scripts/test_csl_multistream.py          # CSL HDEMG
+    python scripts/test_ninapro.py      # Ninapro DB1
+    python scripts/test_dbc.py          # CapgMyo DB-c
+    python scripts/test_csl.py          # CSL HDEMG
     ```
 
 
@@ -75,5 +75,4 @@ Licensed under an GPL v3.0 license.
   year={2019},
   publisher={IEEE}
 }
-
 ```
