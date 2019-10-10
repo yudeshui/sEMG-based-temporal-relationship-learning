@@ -1,9 +1,9 @@
 
-# Code for "A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition" and "sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning"
+# Code for thesis
 
 This repo contains the code for the experiments in the papers: 
 1. Yu Hu, Yongkang Wong, Wentao Wei, Yu Du, Mohan Kankanhalli, Weidong Geng. " [A novel attention-based hybrid CNN-RNN architecture for sEMG-based gesture recognition](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0206049)"
-2. Yu Hu, Yongkang Wong, Qingfeng Dai, Mohan Kankanhalli, Weidong Geng. " [sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning]()"
+2. Yu Hu, Yongkang Wong, Qingfeng Dai, Mohan Kankanhalli, Weidong Geng. " [sEMG-based gesture recognition with embedded virtual hand poses and adversarial learning](https://ieeexplore.ieee.org/abstract/document/8766972/)"
 ## Requirements
 - A CUDA compatible GPU
 - Ubuntu >= 14.04 or any other Linux/Unix that can run Docker
