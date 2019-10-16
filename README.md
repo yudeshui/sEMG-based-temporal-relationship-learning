@@ -41,7 +41,7 @@ This repo contains the code for the experiments in the papers:
     # Train
     scripts/exp  
     # Test
-    python scripts/test
+    scripts/test
     ```
 
 
