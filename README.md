@@ -17,7 +17,7 @@ This repo contains the code for the experiments in the papers:
     ```
 - **Pull docker image for the second paper**
     ```
-    docker pull zjucapg/semg:tf
+    docker pull zjucapg/semgtf:latest  or  docker pull registry.cn-hangzhou.aliyuncs.com/semgtf/semgtf:latest
 - **Dataset**
     
     Eleven databases including Ninapro DB1-DB7, CapgMyo DBa-DBc and CSL-HDEMG can be used for training and test.
