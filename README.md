@@ -39,9 +39,9 @@ This repo contains the code for the experiments in the papers:
     # Get into the capg/semg:mscnn container
     nvidia-docker run -ti -v your_projectdir:/code zjucapg/semg /bin/bash
     # Train
-    scripts/exp  
+    sh scripts/exp.sh
     # Test
-    scripts/test
+    sh scripts/test.sh
     ```
 
 
