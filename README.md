@@ -39,13 +39,9 @@ This repo contains the code for the experiments in the papers:
     # Get into the capg/semg:mscnn container
     nvidia-docker run -ti -v your_projectdir:/code zjucapg/semg /bin/bash
     # Train
-    ./exp_ninapro    # Ninapro DB1
-    or ./exp_dbc     # CapgMyo DB-c
-    or ./exp_csl     # CSL HDEMG
+    scripts/exp  
     # Test
-    python scripts/test_ninapro.py      # Ninapro DB1
-    python scripts/test_dbc.py          # CapgMyo DB-c
-    python scripts/test_csl.py          # CSL HDEMG
+    python scripts/test
     ```
 
 
