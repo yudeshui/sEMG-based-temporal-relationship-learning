@@ -1232,15 +1232,15 @@ def sample(data, model, subject, args):
                     test_loss.append(np.mean((np.squeeze(lyrics)-np.squeeze(y_batch))**2))
                     # if trial in [1,4,6]:
                         # test_loss.append(np.mean((np.squeeze(lyrics)-np.squeeze(y_batch))**2))
-                    # ver='2018.11.30'
-                    # save_root = '../data/ninapro'+'-'+args.dataset+'-'+args.motion_type+'-'+args.disc_type+'-'+args.disc_loss_type+'-'+args.pre_loss_type+'-cganconc'+str(args.cgan_concat_type)+'-preglove-all-g52-std5-new-'+ver+'/data'
+                    ver='2018.11.30'
+                    save_root = '.cache/ninapro'+'-'+args.dataset+'-'+args.motion_type+'-'+args.disc_type+'-'+args.disc_loss_type+'-'+args.pre_loss_type+'-cganconc'+str(args.cgan_concat_type)+'-preglove-all-new-'+ver+'/data'
 
-                    # save_path = os.path.join(save_root, '{s:03d}', '{g:03d}').format(s=subject,g=gesture)
-                    # if os.path.isdir(save_path) is False:
-                        # os.makedirs(save_path)
-                    # save_file = os.path.join(save_path, '{s:03d}_{g:03d}_{t:03d}.mat').format(s=subject,g=gesture,t=trial)
+                    save_path = os.path.join(save_root, '{s:03d}', '{g:03d}').format(s=subject,g=gesture)
+                    if os.path.isdir(save_path) is False:
+                        os.makedirs(save_path)
+                    save_file = os.path.join(save_path, '{s:03d}_{g:03d}_{t:03d}.mat').format(s=subject,g=gesture,t=trial)
 
-                    # sio.savemat(save_file, {'data':lyrics*100})
+                    sio.savemat(save_file, {'data':lyrics*100})
         # print test_loss
         print np.mean(test_loss), np.std(test_loss)
 

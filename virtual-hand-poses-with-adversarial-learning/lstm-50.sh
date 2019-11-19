@@ -4241,155 +4241,241 @@ gpu=1
 # done
 
 
-ver=2018.11.30
+# ver=2018.11.30
 
-dataset='db4'
-mts="angle"
-# dts="mlp cnn cgan-mlp cgan-cnn1 cgan-cnn2"
-dts="mlp"
+# dataset='db4'
+# mts="angle"
+# # dts="mlp cnn cgan-mlp cgan-cnn1 cgan-cnn2"
+# dts="mlp"
 
+# # plts="std"
 # plts="std"
-plts="std"
 
-for mt in $mts; do
-  if [ $mt = "encode" ]; then
-    dim=15
-  else
-    dim=18
-  fi
-  for dt in $dts; do
-    echo "$dt"
-    if [ $dt = "cgan-mlp" -o $dt = "cgan-cnn1" -o $dt = "cgan-cnn2" ]; then
-    # if [ 100 = 100 ]; then
-      dlts="gan"
-    else
-      # dlts="gan wgan"
-      dlts="gan"
-    fi
-    for dlt in $dlts; do
-      for plt in $plts; do
-        if [ $dt = "cgan-cnn2" ]; then
-          ccts=seq 1 3
-        else
-          ccts=0
-        fi
-        for cct in $ccts; do  
-          for i in $(seq 0 9); do
-            CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all-nina-new-kalman.py \
-            --infer 1 --subject $i \
-            --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-length 200 --window-step 1 \
-            --batch-size 500 \
-            --emg-dir ../data/ninapro-$dataset/data --glove-dir ../data/ninapro-$dataset-$mt-md/data --glove-std-dir ../data/ninapro-$dataset-$mt-md/data\
-            --predir ./logs-meanrest-rawimage-$dataset-$mt-$ver\
-            --dim-emg 12 --dim-glove $dim\
-            --signal-image 0\
-            --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
-            --max-epoch 1
-          done
-        done
-      done
-    done
-  done
-done
+# for mt in $mts; do
+  # if [ $mt = "encode" ]; then
+    # dim=15
+  # else
+    # dim=18
+  # fi
+  # for dt in $dts; do
+    # echo "$dt"
+    # if [ $dt = "cgan-mlp" -o $dt = "cgan-cnn1" -o $dt = "cgan-cnn2" ]; then
+    # # if [ 100 = 100 ]; then
+      # dlts="gan"
+    # else
+      # # dlts="gan wgan"
+      # dlts="gan"
+    # fi
+    # for dlt in $dlts; do
+      # for plt in $plts; do
+        # if [ $dt = "cgan-cnn2" ]; then
+          # ccts=seq 1 3
+        # else
+          # ccts=0
+        # fi
+        # for cct in $ccts; do  
+          # for i in $(seq 0 9); do
+            # CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all-nina-new-kalman.py \
+            # --infer 1 --subject $i \
+            # --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-length 200 --window-step 1 \
+            # --batch-size 500 \
+            # --emg-dir ../data/ninapro-$dataset/data --glove-dir ../data/ninapro-$dataset-$mt-md/data --glove-std-dir ../data/ninapro-$dataset-$mt-md/data\
+            # --predir ./logs-meanrest-rawimage-$dataset-$mt-$ver\
+            # --dim-emg 12 --dim-glove $dim\
+            # --signal-image 0\
+            # --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
+            # --max-epoch 1
+          # done
+        # done
+      # done
+    # done
+  # done
+# done
 
-dataset='db3'
-mts="angle"
-# dts="mlp cnn cgan-mlp cgan-cnn1 cgan-cnn2"
-dts="mlp"
+# dataset='db3'
+# mts="angle"
+# # dts="mlp cnn cgan-mlp cgan-cnn1 cgan-cnn2"
+# dts="mlp"
 
+# # plts="std"
 # plts="std"
-plts="std"
 
-for mt in $mts; do
-  if [ $mt = "encode" ]; then
-    dim=15
-  else
-    dim=18
-  fi
-  for dt in $dts; do
-    echo "$dt"
-    if [ $dt = "cgan-mlp" -o $dt = "cgan-cnn1" -o $dt = "cgan-cnn2" ]; then
-    # if [ 100 = 100 ]; then
-      dlts="gan"
-    else
-      # dlts="gan wgan"
-      dlts="gan"
-    fi
-    for dlt in $dlts; do
-      for plt in $plts; do
-        if [ $dt = "cgan-cnn2" ]; then
-          ccts=seq 1 3
-        else
-          ccts=0
-        fi
-        for cct in $ccts; do  
-          for i in $(seq 0 9); do
-            CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all-nina-new-kalman.py \
-            --infer 1 --subject $i \
-            --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-length 200 --window-step 1 \
-            --batch-size 500 \
-            --emg-dir ../data/ninapro-$dataset/data --glove-dir ../data/ninapro-$dataset-$mt-md/data --glove-std-dir ../data/ninapro-$dataset-$mt-md/data\
-            --predir ./logs-meanrest-rawimage-$dataset-$mt-$ver\
-            --dim-emg 12 --dim-glove $dim\
-            --signal-image 0\
-            --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
-            --max-epoch 1
-          done
-        done
-      done
-    done
-  done
-done
+# for mt in $mts; do
+  # if [ $mt = "encode" ]; then
+    # dim=15
+  # else
+    # dim=18
+  # fi
+  # for dt in $dts; do
+    # echo "$dt"
+    # if [ $dt = "cgan-mlp" -o $dt = "cgan-cnn1" -o $dt = "cgan-cnn2" ]; then
+    # # if [ 100 = 100 ]; then
+      # dlts="gan"
+    # else
+      # # dlts="gan wgan"
+      # dlts="gan"
+    # fi
+    # for dlt in $dlts; do
+      # for plt in $plts; do
+        # if [ $dt = "cgan-cnn2" ]; then
+          # ccts=seq 1 3
+        # else
+          # ccts=0
+        # fi
+        # for cct in $ccts; do  
+          # for i in $(seq 0 9); do
+            # CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all-nina-new-kalman.py \
+            # --infer 1 --subject $i \
+            # --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-length 200 --window-step 1 \
+            # --batch-size 500 \
+            # --emg-dir ../data/ninapro-$dataset/data --glove-dir ../data/ninapro-$dataset-$mt-md/data --glove-std-dir ../data/ninapro-$dataset-$mt-md/data\
+            # --predir ./logs-meanrest-rawimage-$dataset-$mt-$ver\
+            # --dim-emg 12 --dim-glove $dim\
+            # --signal-image 0\
+            # --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
+            # --max-epoch 1
+          # done
+        # done
+      # done
+    # done
+  # done
+# done
 
-dataset='db6'
-mts="angle"
-# dts="mlp cnn cgan-mlp cgan-cnn1 cgan-cnn2"
-dts="mlp"
+# dataset='db6'
+# mts="angle"
+# # dts="mlp cnn cgan-mlp cgan-cnn1 cgan-cnn2"
+# dts="mlp"
 
+# # plts="std"
 # plts="std"
-plts="std"
 
-for mt in $mts; do
-  if [ $mt = "encode" ]; then
-    dim=15
-  else
-    dim=18
-  fi
-  for dt in $dts; do
-    echo "$dt"
-    if [ $dt = "cgan-mlp" -o $dt = "cgan-cnn1" -o $dt = "cgan-cnn2" ]; then
-    # if [ 100 = 100 ]; then
-      dlts="gan"
-    else
-      # dlts="gan wgan"
-      dlts="gan"
-    fi
-    for dlt in $dlts; do
-      for plt in $plts; do
-        if [ $dt = "cgan-cnn2" ]; then
-          ccts=seq 1 3
-        else
-          ccts=0
-        fi
-        for cct in $ccts; do  
-          for i in $(seq 0 5); do
-            CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all-nina-new-kalman.py \
-            --infer 1 --subject $i \
-            --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-length 200 --window-step 1 \
-            --batch-size 500 \
-            --emg-dir ../data/ninapro-$dataset/data --glove-dir ../data/ninapro-$dataset-$mt-md/data --glove-std-dir ../data/ninapro-$dataset-$mt-md/data\
-            --predir ./logs-meanrest-rawimage-$dataset-$mt-$ver\
-            --dim-emg 14 --dim-glove $dim\
-            --signal-image 0\
-            --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
-            --max-epoch 1
-          done
-        done
-      done
-    done
-  done
+# for mt in $mts; do
+  # if [ $mt = "encode" ]; then
+    # dim=15
+  # else
+    # dim=18
+  # fi
+  # for dt in $dts; do
+    # echo "$dt"
+    # if [ $dt = "cgan-mlp" -o $dt = "cgan-cnn1" -o $dt = "cgan-cnn2" ]; then
+    # # if [ 100 = 100 ]; then
+      # dlts="gan"
+    # else
+      # # dlts="gan wgan"
+      # dlts="gan"
+    # fi
+    # for dlt in $dlts; do
+      # for plt in $plts; do
+        # if [ $dt = "cgan-cnn2" ]; then
+          # ccts=seq 1 3
+        # else
+          # ccts=0
+        # fi
+        # for cct in $ccts; do  
+          # for i in $(seq 0 5); do
+            # CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all-nina-new-kalman.py \
+            # --infer 1 --subject $i \
+            # --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-length 200 --window-step 1 \
+            # --batch-size 500 \
+            # --emg-dir ../data/ninapro-$dataset/data --glove-dir ../data/ninapro-$dataset-$mt-md/data --glove-std-dir ../data/ninapro-$dataset-$mt-md/data\
+            # --predir ./logs-meanrest-rawimage-$dataset-$mt-$ver\
+            # --dim-emg 14 --dim-glove $dim\
+            # --signal-image 0\
+            # --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
+            # --max-epoch 1
+          # done
+        # done
+      # done
+    # done
+  # done
+# done
+
+ver=20191001
+dataset='db1'
+mt="glove"
+dt="mlp"
+
+plt="std"
+dim=19
+dlt="gan"
+cct=0
+gpu=0
+ 
+# for i in $(seq 0 0); do
+    # CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all.py \
+    # --infer 0 --subject 27 \
+    # --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-step 1 \
+    # --batch-size 500 \
+    # --emg-dir .cache/ninapro-$dataset/data --glove-dir .cache/ninapro-$dataset-$mt/data --glove-std-dir .cache/ninapro-$dataset-$mt-std-5/data\
+    # --predir ./logs-meanrest-rawimage-std5-g52-$ver-abslowpass\
+    # --dim-emg 10 --dim-glove $dim\
+    # --signal-image 0\
+    # --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
+    # --max-epoch 1
+# done
+# for i in $(seq 0 26); do
+    # CUDA_VISIBLE_DEVICES=$gpu python seq2seq-model-cnnrnn-raw-emg-net2-gan-all.py \
+    # --infer 0 --subject $i \
+    # --window-length 10 --window-length 20 --window-length 50 --window-length 100 --window-step 1 \
+    # --batch-size 500 \
+    # --emg-dir .cache/ninapro-$dataset/data --glove-dir .cache/ninapro-$dataset-$mt/data --glove-std-dir .cache/ninapro-$dataset-$mt-std-5/data\
+    # --pretrain-dir ./logs-meanrest-rawimage-std5-g52-$ver-abslowpass-$dataset-$mt-$dt-$dlt-$plt-cganconc$cct-mix-w4-s1/S27\
+    # --predir ./logs-meanrest-rawimage-std5-g52-$ver-abslowpass\
+    # --dim-emg 10 --dim-glove $dim\
+    # --signal-image 0\
+    # --dataset $dataset --motion-type $mt --disc-type $dt --disc-loss-type $dlt --pre-loss-type $plt --cgan-concat-type $cct\
+    # --max-epoch 5
+# done
+
+
+
+# python seq2seq-model-cnnrnn-glove-emg-pre-rec-net1-fix-3.py \
+# --infer 0 --subject 27 \
+# --window-length 1 --window-step 1 \
+# --batch-size 500 \
+# --emg-dir .cache/ninapro-db1/data --glove-dir .cache/ninapro-db1-glove-std-5/data \
+# --predir ./logs-meanrest-rawimage-raw-pre-rec-glove-fix-ninaprodb1\
+# --predict-dir ./logs-meanrest-rawimage-std5-g52-$ver-abslowpass-$dataset-$mt-$dt-$dlt-$plt-cganconc$cct-mix-w4-s1/S27\
+# --dim-emg 10 --dim-glove 19\
+# --max-epoch 28
+
+# for i in $(seq 0 26); do
+  # python seq2seq-model-cnnrnn-glove-emg-pre-rec-net1-fix-3.py \
+  # --infer 0 --subject $i \
+  # --window-length 1 --window-step 1 \
+  # --batch-size 500 \
+  # --emg-dir ../data/ninapro-db1/data --glove-dir ../data/ninapro-db1-glove-std-5/data \
+  # --predir ./logs-meanrest-rawimage-raw-pre-rec-glove-fix-ninaprodb1\
+  # --predict-dir ./logs-meanrest-rawimage-std5-g52-$ver-abslowpass-$dataset-$mt-$dt-$dlt-$plt-cganconc$cct-mix-w4-s1/S$i\
+  # --pretrain-dir ./logs-meanrest-rawimage-raw-pre-rec-glove-fix-ninaprodb1/S27\
+  # --dim-emg 10 --dim-glove 19\
+  # --max-epoch 28
+  # python seq2seq-model-cnnrnn-glove-emg-pre-rec-net1-fix-3.py \
+  # --infer 1 --subject $i \
+  # --window-length 1 --window-step 1 \
+  # --batch-size 500 \
+  # --emg-dir ../data/ninapro-db1/data --glove-dir ../data/ninapro-db1-glove-std-5/data \
+  # --predir ./logs-meanrest-rawimage-raw-pre-rec-glove-fix-ninaprodb1\
+  # --dim-emg 10 --dim-glove 19\
+  # --max-epoch 1  
+# done
+
+for i in $(seq 0 0); do
+  # python seq2seq-model-cnnrnn-glove-emg-pre-rec-net1-fix-3.py \
+  # --infer 0 --subject $i \
+  # --window-length 1 --window-step 1 \
+  # --batch-size 500 \
+  # --emg-dir .cache/ninapro-db1/data --glove-dir .cache/ninapro-db1-glove-std-5/data \
+  # --predir ./logs-meanrest-rawimage-raw-pre-rec-glove-fix-ninaprodb1\
+  # --predict-dir ./logs-meanrest-rawimage-std5-g52-$ver-abslowpass-$dataset-$mt-$dt-$dlt-$plt-cganconc$cct-mix-w4-s1/S$i\
+  # --dim-emg 10 --dim-glove 19\
+  # --max-epoch 28
+  python seq2seq-model-cnnrnn-glove-emg-pre-rec-net1-fix-3.py \
+  --infer 1 --subject $i \
+  --window-length 1 --window-step 1 \
+  --batch-size 500 \
+  --emg-dir .cache/ninapro-db1/data --glove-dir .cache/ninapro-db1-glove-std-5/data \
+  --predir ./logs-meanrest-rawimage-raw-pre-rec-glove-fix-ninaprodb1\
+  --dim-emg 10 --dim-glove 19\
+  --max-epoch 1  
 done
-
-
-
-
